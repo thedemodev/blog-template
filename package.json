@@ -1,0 +1,37 @@
+{
+  "name": "@directus/blog-template",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A simple static-generated blog template using Directus",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "npm run build:site && npm run build:assets",
+    "build:site": "parcel build src/index.html --no-minify --public-url /",
+    "build:assets": "parcel build src/assets/**/*.* -d ./dist/assets"
+  },
+  "repository": "directus/blog-template",
+  "author": "Ben Haynes <ben@rngr.org>",
+  "bugs": {
+    "url": "https://github.com/directus/blog-template/issues"
+  },
+  "homepage": "https://github.com/directus/blog-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.10.3",
+    "parcel-plugin-static-files-copy": "^2.2.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "plyr": "^3.4.4"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": true
+    }
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
