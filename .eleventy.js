@@ -5,7 +5,7 @@ module.exports = eleventyConfig => {
   return {
     dir: { input: 'src', output: 'dist', data: '_data' },
     passthroughFileCopy: true,
-    templateFormats: ['liquid', 'md', 'css', 'html', 'yml'],
-    htmlTemplateEngine: 'liquid'
+    templateFormats: ['hbs', 'md', 'css', 'html', 'yml'],
+    htmlTemplateEngine: 'hbs'
   }
 }
