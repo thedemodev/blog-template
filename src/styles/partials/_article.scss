@@ -1,0 +1,40 @@
+article {
+	transition: $fast $transition all;
+	background-color: $white;
+	border-radius: $border-radius;
+	border: 2px solid $lightest-gray;
+	padding: 40px;
+	margin: 0 auto 40px;
+	max-width: 820px;
+	&:hover {
+		border-color: $lighter-gray;
+	}
+	img.hero {
+		max-width: 100%;
+		margin-bottom: 20px;
+		border-radius: $border-radius;
+	}
+	.byline {
+		margin-top: 20px;
+	}
+	.badge {
+		margin-right: 4px;
+	}
+	h2 {
+		margin-top: 10px;
+	}
+	p {
+		font-size: 18px;
+		line-height: 30px;
+		color: $dark-gray;
+		margin-top: 10px;
+		max-width: 700px;
+		@media (max-width: $breakpoint-small) {
+		  font-size: 16px;
+			line-height: 26px;
+		}
+	}
+	@media (max-width: $breakpoint-small) {
+	  padding: 20px;
+	}
+}
