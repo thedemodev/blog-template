@@ -168,8 +168,10 @@ article {
 //////////////////////////////////////////////////////////////////////////////
 
 .hero {
-	padding-top: 60px;
 	padding-bottom: 0;
+	&.pad-top {
+		padding-top: 60px;
+	}
 	img {
 		width: 100%;
 	}
