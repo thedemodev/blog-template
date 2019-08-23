@@ -5,9 +5,17 @@
   "description": "A simple static-generated blog template using Directus",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "npm run build:site",
-    "build:site": "parcel build src/index.html --no-minify --public-url /"
+    "clean": "rimraf dist",
+    "eleventy:default": "npx eleventy",
+    "eleventy:watch": "npx eleventy --watch",
+    "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
+    "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
+    "scripts:prod": "webpack --mode=production",
+    "scripts:dev": "webpack --mode=development",
+    "serve": "light-server -c .lightserverrc",
+    "dev": "npm-run-all clean styles:dev scripts:dev eleventy:default --parallel eleventy:watch serve --print-label",
+    "build": "run-s clean styles:prod scripts:prod eleventy:default --print-label",
+    "fix": "prettier --write \"src/**/*.{js,scss,liquid}\""
   },
   "repository": "directus/blog-template",
   "author": "Ben Haynes <ben@rngr.org>",
@@ -16,21 +24,24 @@
   },
   "homepage": "https://github.com/directus/blog-template#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "autoprefixer": "^8.6.5",
-    "node-sass": "^4.9.3",
-    "parcel-bundler": "^1.10.3",
-    "parcel-plugin-static-files-copy": "^2.2.1"
+    "babel-loader": "^8.0.6",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "light-server": "^2.6.3",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
     "plyr": "^3.4.4"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": true
-    }
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
