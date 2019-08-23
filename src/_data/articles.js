@@ -15,11 +15,11 @@ module.exports = async function() {
   if (!cachedData) {
     console.log("Fetching articles");
 
-    const jaarverslagen = await directus.getItems("articles").then(res => res.data);
+    const articles = await directus.getItems("articles").then(res => res.data);
 
-    cache.setKey(key, jaarverslagen);
+    cache.setKey(key, articles);
     cache.save();
-    return jaarverslagen;
+    return articles;
   }
 
   return cachedData;
