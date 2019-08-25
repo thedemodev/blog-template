@@ -48,64 +48,6 @@ permalink: posts/{{ article.id }}/index.html
 
     {{{ article.body }}}
 
-    <!--
-    <p>
-      Before you can experience all of the awesome features within Directus 7, you first need to install it. In this article, I’ll show you how to get started with Directus.
-    </p>
-    <blockquote>
-      <p>
-        This tutorial assumes you have a LAMP (Linux, Apache, MySQL, PHP) stack pre-installed. If you don’t have a server yet, I highly recommend getting a DigitalOcean droplet with a LAMP one-click install.
-      </p>
-      <p>
-        If you already have a VPS with a clean Ubuntu installation, I recommend you follow this tutorial on installing the LAMP stack.
-      </p>
-      <p>
-        The following steps should work for other versions of Ubuntu, and even other operating systems, but not all of these combinations have been tested.
-      </p>
-    </blockquote>
-
-    <h2>Installing Directus using SSH & Git (recommended)</h2>
-    <h3>PHP, Apache & MySQL setup</h3>
-    <p>
-      Directus <a href="https://github.com/directus/directus#requirements">requires PHP’s cUrl extension to be installed</a>, so let’s start by installing that:
-    </p>
-    <code>sudo apt-get install php-curl</code>
-    <p>
-      Directus also requires <code>mod_rewrite</code> to be enabled. You can enable <code>mod_rewrite</code> by running <code>sudo a2enmod rewrite</code> and making sure that the following config is set in <code>/etc/apache2/sites-available/000-default.conf</code>.
-    </p>
-    <pre>
-    &lt;Directory /var/www/&gt;
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride All
-    Order allow,deny
-    allow from all
-    &lt;/Directory&gt;
-    </pre>
-    <p>
-      (Make sure to restart the apache2 service after making changes to the config by running: <code>sudo systemctl restart apache2</code>)
-    </p>
-    <h3>Cloning Directus from GitHub</h3>
-    <p>
-      Next up, navigate to <code>/var/www/html</code> by running <code>cd /var/www/html</code>. This is Apache’s default public folder in which we’ll install Directus.
-    </p>
-    <p>
-      Next up, clone Directus from GitHub as follows:
-    </p>
-    <code>git clone https://github.com/directus/directus.git</code>
-    <p>
-      This clones the master branch of Directus to a folder called directus.
-    </p>
-    <hr>
-    <p>
-      Note: the owner of the <code>directus</code> folder may be set to <code>root</code> if you clone Directus directly. Make sure to change the owner back to <code>www-data</code> otherwise Directus won’t have write-access to important locations like <code>/uploads</code>. You can reset the permissions by running <code>sudo chown www-data -R /var/www/html/directus</code>.
-    </p>
-    <img src="/images/example.jpg">
-    <h3>Pointing Apache to Directus</h3>
-    <p>
-      The last thing that’s left is making sure that Apache is using Directus as the document root. This will ensure that bad actors have no way to access the private data in your system and will put the API endpoints in the root. This allows you to retrieve your data from <code>/</code> and access the admin app at <code>/admin</code>.
-    </p>
-  -->
-
     <div class="badges">
       <a href="#new" class="badge accent">New</a>
       {{#each article.tags as |tag tagID| }}
@@ -152,19 +94,15 @@ permalink: posts/{{ article.id }}/index.html
   <div class="container comments">
     <div id="disqus_thread"></div>
     <script>
-
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
     var disqus_config = function () {
       this.page.url = "http://localhost:4000/posts/{{ this.id }}/index.html";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "{{ this.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://directus.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+      var d = document, s = d.createElement('script');
+      s.src = 'https://directus.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
