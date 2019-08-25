@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "eleventy:default": "npx eleventy",
-    "eleventy:watch": "npx eleventy --watch",
+    "eleventy:watch": "npx eleventy --watch --quiet",
     "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
     "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
     "scripts:prod": "webpack --mode=production",
