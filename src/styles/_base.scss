@@ -51,8 +51,8 @@ section {
 	justify-content: space-between;
 	max-width: 820px;
   margin: 80px auto 80px;
-  &.bottom {
-    margin: 80px auto 120px;
+  &.center {
+    justify-content: center;
   }
 }
 

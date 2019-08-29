@@ -17,6 +17,17 @@ module.exports = eleventyConfig => {
     return JSON.stringify(context, null, 4);
   });
 
+  eleventyConfig.addShortcode("isNew", function(datetime, options) {
+    var d1 = new Date(datetime);
+    var d2 = new Date();
+    d2.setDate(d2.getDate() - 30); // in the last 30 days
+    return (d1.getTime() > d2.getTime()) ? options.fn(this) : options.inverse(this);
+  });
+
+  eleventyConfig.addShortcode("encodeURI", function(str) {
+    return encodeURIComponent(str);
+  });
+
   return {
     dir: { input: 'src', output: 'dist', data: '_data' },
     passthroughFileCopy: true,
