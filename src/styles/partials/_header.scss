@@ -33,6 +33,11 @@ nav {
         fill: $white;
       }
     }
+    &.link {
+      @media (max-width: 530px) {
+        display: none;
+      }
+    }
     .arrow {
       vertical-align: middle;
       margin-right: 8px;
