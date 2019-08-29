@@ -9,6 +9,11 @@ pagination:
 permalink: posts/{{ article.id }}/
 ---
 
+<!--
+Use this to easily print larger objects to the source:
+[[[json article]]]
+-->
+
 <nav class="short">
   <div class="container">
     <a href="/" class="logo">
@@ -20,15 +25,12 @@ permalink: posts/{{ article.id }}/
       <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path fill="#90a4ae" fill-rule="evenodd" d="M8 16L0 8l8-8 1.41 1.41L3.83 7H16v2H3.83l5.58 5.59z"/></svg>
       Back to Articles
     </a>
-    {{!-- <div id="scroll">
-      {{ article.title }}
-    </div> --}}
-    <a href="https://directus.io" class="cta button dark-gray">Discover Directus</a>
+    <a href="{{global.cta_link}}" class="cta button dark-gray">{{global.cta_text}}</a>
   </div>
 </nav>
 
 <header class="hero pad-top">
-  <img src="https://directus.media/dcaoiqv0Icl/{{ article.hero.filename }}">
+  <img src="https://directus.media/{{global.project}}/{{ article.hero.filename }}">
   <div class="caption">{{{ article.hero.description }}}</div>
 </header>
 
@@ -62,7 +64,7 @@ permalink: posts/{{ article.id }}/
     </div>
 
     <div class="byline">
-      <img src="/images/ben-haynes.jpg" class="avatar">
+      <img src="https://api.directus.cloud/thumbnail/{{global.project}}/200/200/crop/good/{{ article.author.avatar.filename }}" class="avatar">
       <span>
         <b>{{ article.author.first_name }} {{ article.author.last_name }}</b><br>
         <span class="subdue">{{ formatDate article.publish_date }} • {{ article.read_duration }}m read</span>
@@ -81,7 +83,7 @@ permalink: posts/{{ article.id }}/
     </div>
 
     <div class="byline large">
-      <img src="/images/ben-haynes.jpg" class="avatar">
+      <img src="https://api.directus.cloud/thumbnail/{{global.project}}/200/200/crop/good/{{ article.author.avatar.filename }}" class="avatar">
       <span class="info">
         <h4>
           {{ article.author.first_name }} {{ article.author.last_name }}

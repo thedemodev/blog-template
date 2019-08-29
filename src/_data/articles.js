@@ -24,7 +24,7 @@ module.exports = async function() {
         }
       },
       sort: "-publish_date",
-      fields: ["*", "author.*", "hero.*", "tags.tag_id.name"]
+      fields: ["*", "author.*", "author.avatar.filename", "hero.*", "tags.tag_id.name"]
     }).then(res => res.data);
 
     cache.setKey(key, articles);
