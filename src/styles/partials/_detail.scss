@@ -106,6 +106,7 @@
     font-family: 'Roboto Mono', monospace;
     background-color: $lightest-gray;
     border-radius: $border-radius;
+    overflow-wrap: break-word;
   }
   pre {
     font-size: 18px;

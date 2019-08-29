@@ -38,6 +38,9 @@ body {
 main {
 	margin-top: 60px;
 	margin-bottom: 60px;
+  @media (max-width: $breakpoint-small) {
+    margin-top: 40px;
+  }
 }
 
 section {
