@@ -25,6 +25,13 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 	}
+  #icon {
+    position: absolute;
+    left: 36px;
+    top: 19px;
+    width: 24px;
+    z-index: 1;
+  }
 	input#search {
 		position: absolute;
 		left: 40px;
@@ -36,6 +43,7 @@
 		line-height: 60px;
 		border: none;
 		outline: none;
+    padding-left: 24px;
 	}
 	a {
 		transition: $medium $transition color;

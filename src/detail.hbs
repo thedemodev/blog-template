@@ -30,8 +30,10 @@ Use this to easily print larger objects to the source:
 </nav>
 
 <header class="hero pad-top">
+  {{#if article.hero.filename}}
   <img src="https://directus.media/{{global.project}}/{{ article.hero.filename }}">
   <div class="caption">{{{ article.hero.description }}}</div>
+  {{/if}}
 </header>
 
 <main>
