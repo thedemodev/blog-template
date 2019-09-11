@@ -103,7 +103,10 @@
   ul,ol {
     font-family: 'Merriweather', serif;
     font-size: 18px;
-    margin: 12px 0;
+    margin: 24px 0;
+    ul,ol {
+      margin: 12px 0;
+    }
     li {
       margin: 12px 0;
     }
