@@ -54,7 +54,7 @@ Use this to easily print larger objects to the source:
         <h2>{{ this.title }}</h2>
         <p>{{ this.summary }}</p>
         <div class="byline">
-          <img src="https://api.directus.cloud/{{global.project}}/assets/{{ article.author.avatar.private_hash }}" class="avatar">
+          <img src="https://api.directus.cloud/{{../global.project}}/assets/{{ this.author.avatar.private_hash }}" class="avatar">
           <span>
             <b>{{ this.author.first_name }} {{ this.author.last_name }}</b><br>
             <span class="subdue">{{ formatDate this.publish_date }} • {{ this.read_duration }}m read</span>
