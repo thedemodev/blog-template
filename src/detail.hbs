@@ -30,8 +30,8 @@ Use this to easily print larger objects to the source:
 </nav>
 
 <header class="hero pad-top">
-  {{#if article.hero.filename}}
-  <img src="https://directus.media/{{global.project}}/{{ article.hero.filename }}">
+  {{#if article.hero.filename_disk}}
+  <img src="https://directus.media/{{global.project}}/{{ article.hero.filename_disk }}">
   <div class="caption">{{{ article.hero.description }}}</div>
   {{/if}}
 </header>
@@ -66,7 +66,7 @@ Use this to easily print larger objects to the source:
     </div>
 
     <div class="byline">
-      <img src="https://api.directus.cloud/thumbnail/{{global.project}}/200/200/crop/good/{{ article.author.avatar.filename }}" class="avatar">
+      <img src="https://api.directus.cloud/{{global.project}}/assets/{{ article.author.avatar.private_hash }}" class="avatar">
       <span>
         <b>{{ article.author.first_name }} {{ article.author.last_name }}</b><br>
         <span class="subdue">{{ formatDate article.publish_date }} • {{ article.read_duration }}m read</span>
@@ -85,7 +85,7 @@ Use this to easily print larger objects to the source:
     </div>
 
     <div class="byline large">
-      <img src="https://api.directus.cloud/thumbnail/{{global.project}}/200/200/crop/good/{{ article.author.avatar.filename }}" class="avatar">
+      <img src="https://api.directus.cloud/{{global.project}}/assets/{{ article.author.avatar.private_hash }}" class="avatar">
       <span class="info">
         <h4>
           {{ article.author.first_name }} {{ article.author.last_name }}

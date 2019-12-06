@@ -5,7 +5,7 @@ const sdk = require("@directus/sdk-js");
 // Create a new instance of the Directus Javascript SDK
 const directus = new sdk({
   url: "https://api.directus.cloud",
-  project: "dcaoiqv0Icl"
+  project: "dcpNLHMDvBQfgKbQ"
 });
 
 module.exports = async function() {

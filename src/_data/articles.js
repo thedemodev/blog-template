@@ -5,7 +5,7 @@ const sdk = require("@directus/sdk-js");
 // Create a new instance of the Directus Javascript SDK
 const directus = new sdk({
   url: "https://api.directus.cloud",
-  project: "dcaoiqv0Icl"
+  project: "dcpNLHMDvBQfgKbQ"
 });
 
 module.exports = async function() {
@@ -24,7 +24,7 @@ module.exports = async function() {
         }
       },
       sort: "-publish_date",
-      fields: ["*", "author.*", "author.avatar.filename", "hero.*", "tags.tag_id.name"]
+      fields: ["*", "author.*.*", "hero.*", "tags.tag_id.name"]
     }).then(res => res.data);
 
     cache.setKey(key, articles);

@@ -42,8 +42,8 @@ Use this to easily print larger objects to the source:
     {{#each articles }}
     <a href="/posts/{{ this.id }}/" class="post hidden">
       <article>
-        {{#if this.hero.filename}}
-        <img src="https://directus.media/{{../global.project}}/{{ this.hero.filename }}" class="hero">
+        {{#if this.hero.filename_disk}}
+        <img src="https://directus.media/{{../global.project}}/{{ this.hero.filename_disk }}" class="hero">
         {{/if}}
         {{#isNew this.publish_date}}
         <span class="badge accent">New</span>
@@ -54,7 +54,7 @@ Use this to easily print larger objects to the source:
         <h2>{{ this.title }}</h2>
         <p>{{ this.summary }}</p>
         <div class="byline">
-          <img src="https://api.directus.cloud/thumbnail/{{../global.project}}/200/200/crop/good/{{ this.author.avatar.filename }}" class="avatar">
+          <img src="https://api.directus.cloud/{{global.project}}/assets/{{ article.author.avatar.private_hash }}" class="avatar">
           <span>
             <b>{{ this.author.first_name }} {{ this.author.last_name }}</b><br>
             <span class="subdue">{{ formatDate this.publish_date }} • {{ this.read_duration }}m read</span>
